@@ -7,7 +7,7 @@
 sem_t semaphore;
 
 int rows, cols;
-int *col_totals = NULL;
+int *col_totals = NULL; // Array for storing sum of columns
 int *matrix = NULL;
 
 void* sumOfCols(void* arg) {
@@ -58,8 +58,8 @@ int main() {
 
     scanf("%d%d", &rows, &cols);
 
-    col_totals = (int*)malloc(cols * sizeof(int));
-    matrix = (int*)malloc(((rows * cols)) * sizeof(int));
+    col_totals = (int*)malloc(cols * sizeof(int)); // Initializing result array.
+    matrix = (int*)malloc(((rows * cols)) * sizeof(int)); // Initializing array.
 
     for(int i = 0; i < rows*cols; i++) {
         scanf("%d", &matrix[i]);
